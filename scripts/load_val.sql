@@ -7,6 +7,7 @@ This script loads data from crm and erp sources and converts the integer values 
 bronze.crm_sales_details table to date values.
 */
 
+USE DataWareHouse
 TRUNCATE TABLE bronze.crm_cust_info;
 BULK INSERT bronze.crm_cust_info
 FROM 'C:\Users\erick\Desktop\machine_learning\SQL\project1\sql-data-WH-project\datasets\source_crm\cust_info.csv'
