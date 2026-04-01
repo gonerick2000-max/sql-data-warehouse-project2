@@ -3,7 +3,7 @@
 STUDYING THE DATA
 =================
 Script Purpose:
-The purpose of this script is to study the sctructure of the data obtained with the crm source and erase repeated values. It also standardized values.
+The purpose of this script is to study the sctructure of the data obtained with the crm source and erase repeated values. Also standardized values.
 */
 
 
@@ -120,3 +120,54 @@ UPDATE bronze.erp_CUST_AZ12
 SET GEN = CASE WHEN GEN = 'Male' THEN 'M'
 		 WHEN GEN = 'Female' THEN 'F'
 		 ELSE NULLIF(GEN, '') END
+
+
+/* -------------------------------- */
+
+SELECT 
+	CNTRY,
+	COUNT(*) AS counts,
+	LEN(CNTRY) AS str_length
+FROM bronze.erp_LOC_A101
+GROUP BY CNTRY
+
+UPDATE bronze.erp_LOC_A101
+SET CNTRY = CASE WHEN CNTRY IN ('USA', 'US') THEN 'United States'
+			WHEN CNTRY = 'DE' THEN 'Germany'
+			ELSE NULLIF(CNTRY, '') END
+
+
+
+SELECT 
+	CID,
+	count(*) AS counts
+FROM bronze.erp_LOC_A101
+GROUP BY CID
+HAVING count(*) != 1 or count(*) IS NULL
+
+
+
+/* -------------------------------- */
+
+
+SELECT 
+	ID,
+	count(*)
+FROM bronze.erp_PX_CAT_G1V2
+GROUP BY ID
+HAVING count(*) != 1
+
+SELECT 
+	CAT
+FROM bronze.erp_PX_CAT_G1V2
+GROUP BY CAT
+
+SELECT 
+	SUBCAT
+FROM bronze.erp_PX_CAT_G1V2
+GROUP BY SUBCAT
+
+
+SELECT MAINTENANCE
+FROM bronze.erp_PX_CAT_G1V2
+GROUP BY MAINTENANCE
