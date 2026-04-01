@@ -3,7 +3,7 @@
 STUDYING THE DATA
 =================
 Script Purpose:
-The purpose of this script is to study the sctructure of the data obtained with the crm source and erase repeated values. Also standardized values.
+The purpose of this script is to study the sctructure of the data obtained with the crm and erp sources and erase repeated values. Also standardized values.
 */
 
 
