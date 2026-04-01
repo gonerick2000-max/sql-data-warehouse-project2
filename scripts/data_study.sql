@@ -3,7 +3,7 @@
 STUDYING THE DATA
 =================
 Script Purpose:
-The purpose of this script is to study the sctructure of the data obtained with the crm and erp sources and erase repeated values. Also standardized values.
+The purpose of this script is to study the sctructure of the data obtained with the crm source and erase repeated values. Also standardized values.
 */
 
 
@@ -98,6 +98,20 @@ ORDER BY ord_year
 SELECT *
 FROM bronze.crm_sales_details
 WHERE sls_ship_dt IS NULL OR sls_due_dt IS NULL
+
+
+SELECT *
+FROM bronze.crm_sales_details
+WHERE sls_price is null
+
+UPDATE bronze.crm_sales_details
+SET sls_price = CASE WHEN sls_prd_key = 'WB-H098' THEN 5
+					 WHEN sls_prd_key='HL-U509-B' THEN 35
+					 WHEN sls_prd_key = 'BC-R205' THEN 9
+					 WHEN sls_prd_key = 'HL-U509' THEN 35
+					 WHEN sls_prd_key = 'BC-M005' THEN 10
+					 WHEN sls_prd_key = 'CL-9009' THEN 8 END
+WHERE sls_price IS NULL
 
 /* -------------------------------- */
 
