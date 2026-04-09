@@ -39,7 +39,7 @@ GO
 
 TRUNCATE TABLE gold.dim_customers;
 BULK INSERT gold.dim_customers
-FROM 'C:\Users\erick\Desktop\machine_learning\SQL\PROJECT\DataAnalysis\gold.dim_customers.csv'
+FROM 'C:\Users\erick\Desktop\SQL\PROJECT\DataWareHouse\3_gold\gold.dim_customers.csv'
 WITH (
 	FIRSTROW = 2,
 	FIELDTERMINATOR = ',',
@@ -69,7 +69,7 @@ GO
 
 TRUNCATE TABLE gold.dim_products;
 BULK INSERT gold.dim_products
-FROM 'C:\Users\erick\Desktop\machine_learning\SQL\PROJECT\DataAnalysis\gold.dim_products.csv'
+FROM 'C:\Users\erick\Desktop\SQL\PROJECT\DataWareHouse\3_gold\gold.dim_products.csv'
 WITH (
 	FIRSTROW = 2,
 	FIELDTERMINATOR = ',',
@@ -98,7 +98,7 @@ GO
 
 TRUNCATE TABLE gold.fact_sales;
 BULK INSERT gold.fact_sales
-FROM 'C:\Users\erick\Desktop\machine_learning\SQL\PROJECT\DataAnalysis\gold.fact_sales.csv'
+FROM 'C:\Users\erick\Desktop\SQL\PROJECT\DataWareHouse\3_gold\gold.fact_sales.csv'
 WITH (
 	FIRSTROW = 2,
 	FIELDTERMINATOR = ',',
