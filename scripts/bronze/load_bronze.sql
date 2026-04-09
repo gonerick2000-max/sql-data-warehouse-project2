@@ -1,6 +1,6 @@
 /*
 ===============================
-LOADING DATA INTO BRONZE TABLES
+LOAD DATA INTO BRONZE TABLES
 ===============================
 Script Purpose:
 This script performs a full load of raw data into the bronze layer 
