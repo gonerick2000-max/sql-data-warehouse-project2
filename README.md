@@ -1,4 +1,4 @@
-<img width="562" height="486" alt="image" src="https://github.com/user-attachments/assets/3f04a2ae-c454-43ca-9046-a45d3c360034" /># sql-data-warehouse-project
+# sql-data-warehouse-project
 
 This project implements a Data Warehouse in SQL Server following the Medallion Architecture (Bronze, Silver, Gold).
 
